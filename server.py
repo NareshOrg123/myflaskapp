@@ -6,13 +6,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    '''Function hello returns a string'''
     return 'Hello, World!'
 
 @app.route('/myflaskapp')
 def myflaskapp():
+    '''Function myflaskapp returns a string'''
     return 'Hello, from My flask app!'
 
 @app.route('/appwithparams')
 def appwithparams():
-    return 'Hello, from My flask app!'
-
+    '''Function appwithparams returns a string'''
+    return 'Hello, from My flask app!' + request.args.get('name')
